@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: video-task-system
+  main:
+    allow-circular-references: true
+
+server:
+  port: ${PORT:8080}
+
+zookeeper:
+  connect: localhost:2181
+
+worker:
+  capacity: 3
+
+scheduler:
+  strategy: ${STRATEGY:ROUND_ROBIN}
+
+logging:
+  level:
+    root: INFO
+    com.video.task: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
